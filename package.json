@@ -1,0 +1,27 @@
+{
+  "name": "first-package",
+  "version": "0.0.1",
+  "description": "My first NPM package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daswer123/Level-3-Node-JS.git"
+  },
+  "keywords": [
+    "test",
+    "tutor",
+    "first-app"
+  ],
+  "author": "Danil Boldyrev <daswerq123@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daswer123/Level-3-Node-JS/issues"
+  },
+  "homepage": "https://github.com/daswer123/Level-3-Node-JS#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
