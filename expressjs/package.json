@@ -1,0 +1,26 @@
+{
+  "name": "expressjs-practice",
+  "version": "0.0.2",
+  "description": "I learn how use express js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express"
+  ],
+  "author": "Danil Boldyrev <daswerq123@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "ejs": "^3.1.5",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "json-server": "^0.16.1",
+    "uuid": "^8.3.0"
+  }
+}
