@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const router = Router();
-const Courses = require("../models")
+const Courses = require("../models/courses")
 
 router.get("/", async (req,res) =>{
     const courses = await Courses.getAllData();

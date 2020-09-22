@@ -3,6 +3,7 @@ const express = require("express")
 const homeRoutes = require("./routes/index")
 const courseRoutes = require("./routes/course")
 const addRoutes = require("./routes/add")
+const cartRoutes = require("./routes/cart")
 
 const app = express();
 
@@ -12,6 +13,7 @@ const hbs = exphbs.create({
 })
 
 app.engine("hbs", hbs.engine);
+
 app.set("view engine", "hbs");
 app.set("views","pages")
 
@@ -22,6 +24,7 @@ app.use(express.urlencoded({extended : true}))
 app.use("/",homeRoutes)
 app.use("/courses",courseRoutes)
 app.use("/add",addRoutes)
+app.use("/cart",cartRoutes)
 
 
 
