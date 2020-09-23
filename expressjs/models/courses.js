@@ -21,7 +21,6 @@ class Courses {
 
     static async update(course){
         const courses = await Courses.getAllData();
-        console.log(course)
         const inx = courses.findIndex(elem => elem.id === course.id);
         courses[inx] = course;
 

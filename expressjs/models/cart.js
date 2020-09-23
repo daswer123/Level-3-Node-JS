@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+const e = require("express");
 
 console.log(process.mainModule.path)
 const p = path.join(
@@ -32,6 +33,32 @@ class Cart{
                 err => {
                     if (err) reject(err)
                     resolve()
+                }
+            )
+        })
+    }
+
+    static async remove(id){
+        const cart = await Cart.fetch();
+        
+        const index = cart.courses.findIndex(elem => elem.id === id);
+        const course = cart.courses[index];
+
+        if(course.count === 1){
+            cart.courses = cart.courses.filter(elem => elem.id !== id)
+        } else {
+            cart.courses[index].count--
+        }
+
+        cart.price -= course.price
+
+        return new Promise((resolve,reject) =>{
+            fs.writeFile(
+                p,
+                JSON.stringify(cart),
+                err => {
+                    if (err) reject(err)
+                    resolve(cart)
                 }
             )
         })

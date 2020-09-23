@@ -1,4 +1,5 @@
 const exphbs = require("express-handlebars")
+const path = require("path")
 const express = require("express")
 const homeRoutes = require("./routes/index")
 const courseRoutes = require("./routes/course")
@@ -17,7 +18,7 @@ app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 app.set("views","pages")
 
-app.use(express.static("public"))
+app.use(express.static(path.join(__dirname,"public")))
 
 app.use(express.urlencoded({extended : true}))
 
