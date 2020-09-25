@@ -15,13 +15,17 @@
             <tr>
                 <td>{{title}}</td>
                 <td>{{count}}</td>
-                <td><button class="btn btn-primary js-remove" data-id="{{id}}">Delete</button></td>
+                <td><button class="btn btn-primary js-remove" data-csrf="{{@root.csrf}}" data-id="{{id}}">Delete</button></td>
             </tr>
             {{/each}}
         </tbody>
     </table>
 
     <p class="big"><strong>Price:</strong><span class="price"> {{price}} </span> </p>
+    <form action="/order" method="POST">
+        <button class="btn green">Make order</button>
+        <input name="_csrf" type="hidden" value="{{csrf}}">
+    </form>
 {{else}}
     <p>There aren't any courses</p>
 {{/if}}

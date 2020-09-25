@@ -19,6 +19,8 @@
           <span class="helper-text" data-error="Type course img url" ></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Send new Course</button>
+    <input name="_csrf" type="hidden" value="{{csrf}}">
+
+    <button type="submit" class="btn btn-primary">Create new Course</button>
 </form>
 

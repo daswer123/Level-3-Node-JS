@@ -14,12 +14,18 @@
   "author": "Danil Boldyrev <daswerq123@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "bcryptjs": "^2.4.3",
     "ejs": "^3.1.5",
+    "mongoose": "^5.10.6",
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^2.4.1",
+    "csurf": "^1.11.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
+    "express-session": "^1.17.1",
     "json-server": "^0.16.1",
     "uuid": "^8.3.0"
   }
