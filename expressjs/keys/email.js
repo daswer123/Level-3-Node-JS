@@ -1,4 +1,4 @@
-const keys = require("./index");
+const keys = require(".");
 
 function registration(to){
     return {
