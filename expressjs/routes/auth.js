@@ -4,7 +4,8 @@ const crypt = require("bcryptjs");
 const nodemailer = require("nodemailer");
 const sendgrid = require("nodemailer-sendgrid-transport");
 const keys = require("../keys")
-const emailOptions = require("../keys/email")
+const emailOptions = require("../keys/email");
+const { registration } = require("../keys/email");
 const router = Router();
 
 const transport = nodemailer.createTransport(sendgrid({
