@@ -86,7 +86,7 @@ router.post("/register",async (req,res) => {
 
         await user.save()
 
-        await transport.sendMail(emailOptions(email))
+        await transport.sendMail(emailOptions.registration(email))
 
         req.session.user = user;
         req.session.isAuth = true;

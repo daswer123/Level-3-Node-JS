@@ -1,6 +1,6 @@
 const keys = require("./index");
 
-module.exports = function(to){
+function registration(to){
     return {
         to,
         from : keys.EMAIL_ROOT_NAME,
@@ -14,3 +14,6 @@ module.exports = function(to){
         `
     }
 }
+
+
+module.exports = {registration}
