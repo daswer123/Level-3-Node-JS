@@ -1,7 +1,4 @@
- {{#if ConfirmPass}}
-      <b>Check your email we send you</b>
- {{/if}}
- <div class="row auth">
+<div class="row auth">
     <div class="col s12">
       <ul class="tabs">
         <li class="tab col s6"><a class="active" href="#login">Login</a></li>
@@ -10,6 +7,9 @@
     </div>
     <div id="login" class="col s6 offset-s3">
         <h1>Login in shop</h1>
+         {{#if resetSucc}}
+            <p class="success">{{resetSucc}}</p>
+        {{/if}}
         {{#if logErr}}
             <p class="alert">{{logErr}}</p>
         {{/if}}
@@ -25,8 +25,8 @@
                 <label for="password">Password</label>
                 <span class="helper-text" data-error="Type your password"></span>
           </div>
+          <div class="reset"><a href="/auth/reset" alt="reset">Fogot password</a></div>
           <button type="submit" class="btn btn-primary">Login</button>
-          <a href="/auth/reset" class="btn btn-primary" alt="reset">Fogot password</a>
 
           <input name="_csrf" type="hidden" value="{{csrf}}">
       </form>

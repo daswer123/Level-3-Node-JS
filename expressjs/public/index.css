@@ -79,3 +79,20 @@
     background-color: rgba(255, 0, 0, 0.356);
     color:rgb(226, 67, 67);
 }
+
+.success{
+    text-align: center;
+    padding : .5rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-color: rgba(54, 202, 62, 0.377);
+    color:rgb(36, 160, 36);
+}
+
+.reset{
+    margin-bottom: 20px;
+}
+
+.avatar{
+    max-width: 320px;
+}

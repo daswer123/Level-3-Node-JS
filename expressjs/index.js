@@ -1,26 +1,28 @@
-const exphbs = require("express-handlebars")
+const exphbs = require("express-handlebars");
 const mongoose = require("mongoose");
 const path = require("path")
 const express = require("express")
 const session = require("express-session");
 const MongoStore = require("connect-mongodb-session")(session);
+
 const homeRoutes = require("./routes/index")
 const courseRoutes = require("./routes/course")
 const addRoutes = require("./routes/add")
 const cartRoutes = require("./routes/cart")
 const orderRoutes = require("./routes/order.js")
 const authRoutes = require("./routes/auth")
+const profileRoutes = require("./routes/profile")
 
 const keys = require("./keys")
 
 const varMiddleware = require("./middleware/variables");
 const userMiddleware = require("./middleware/user");
+const pageNotFoundMiddleware = require("./middleware/404");
+const fileUploadMiddleware = require("./middleware/file")
 const csurf = require("csurf");
-const flash = require("connect-flash")
+const flash = require("connect-flash");
 
 const app = express();
-
-
 
 const hbs = exphbs.create({
     defaultLayout : "main",
@@ -50,6 +52,8 @@ app.use(session({
     store
 }))
 
+app.use(fileUploadMiddleware.single("avatar"))
+
 app.use(csurf())
 app.use(flash())
 app.use(varMiddleware)
@@ -61,6 +65,9 @@ app.use("/add",addRoutes)
 app.use("/cart",cartRoutes)
 app.use("/order",orderRoutes)
 app.use("/auth",authRoutes)
+app.use("/profile",profileRoutes)
+
+app.use(pageNotFoundMiddleware)
 
 const PORT = process.env.PORT || 3000
 
