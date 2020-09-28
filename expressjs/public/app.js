@@ -47,4 +47,9 @@ if (cart){
     })
 }
 
-M.Tabs.init(document.querySelector(".tabs"))
+const loginScreen = document.querySelector(".auth");
+
+if(loginScreen){
+    M.Tabs.init(document.querySelector(".tabs"))
+}
+

@@ -2,6 +2,10 @@ const exphbs = require("express-handlebars");
 const mongoose = require("mongoose");
 const path = require("path")
 const express = require("express")
+
+const helmet = require("helmet")
+const compress = require("compression")
+
 const session = require("express-session");
 const MongoStore = require("connect-mongodb-session")(session);
 
@@ -58,6 +62,12 @@ app.use(fileUploadMiddleware.single("avatar"))
 
 app.use(csurf())
 app.use(flash())
+
+app.use(compress())
+app.use(helmet({
+    contentSecurityPolicy: false
+}))
+
 app.use(varMiddleware)
 app.use(userMiddleware)
 
