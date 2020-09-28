@@ -80,3 +80,7 @@ exports.courseValidator = [
     body("price","Price must be min 1$ max 10000$").isNumeric(),
     body("img","Type Correct URL").isURL()
 ]
+
+exports.profileValidator = [
+    body("username","Name must be at least 3 symbols").isLength({min : 3, max : 30}).trim()
+]
