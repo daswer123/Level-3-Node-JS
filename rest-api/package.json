@@ -1,0 +1,30 @@
+{
+  "name": "rest-api-todo",
+  "version": "0.0.3",
+  "description": "Todo with REST API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev"  : "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daswer123/Level-3-Node-JS.git"
+  },
+  "keywords": [
+    "node",
+    "js"
+  ],
+  "author": "daswer123 <daswerq123@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daswer123/Level-3-Node-JS/issues"
+  },
+  "homepage": "https://github.com/daswer123/Level-3-Node-JS#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
